@@ -3,19 +3,13 @@ pipeline {
   stages {
     stage('GIT') {
       steps {
-        build 'RunDevelopmentProject'
+        build 'GIT'
       }
     }
 
-    stage('Python Tests') {
+    stage('Python_Tests') {
       steps {
-        build 'Python_WebTests'
-      }
-    }
-
-    stage('Performance Scripts') {
-      steps {
-        build 'UiPathPerformance'
+        build 'Python_TestCases'
       }
     }
 
