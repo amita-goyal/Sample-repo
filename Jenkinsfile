@@ -7,25 +7,31 @@ pipeline {
       }
     }
 
-    stage('Python_RestAPITests') {
+    stage('Rest_API_Tests') {
       steps {
         build 'Python_ApiTestCases'
       }
     }
 
-    stage('Python_WebTests') {
+    stage('Web_Tests') {
       steps {
         build 'Python_WebTestCases'
       }
     }
 
-    stage('Python_MobileTests') {
+    stage('Mobile_Tests') {
       steps {
         build 'Python_MobileTestCases'
       }
     }
 
-    stage('Generating_Reports') {
+    stage('Performance_Test') {
+      steps {
+        build 'Performance_Tests'
+      }
+    }
+
+    stage('Generate Reports') {
       steps {
         build 'Python_ReportGeneration'
       }
