@@ -7,33 +7,15 @@ pipeline {
       }
     }
 
-    stage('Rest_API_Tests') {
+    stage('UIPath_Tests') {
       steps {
-        build 'Python_ApiTestCases'
-      }
-    }
-
-    stage('Web_Tests') {
-      steps {
-        build 'Python_WebTestCases'
-      }
-    }
-
-    stage('Mobile_Tests') {
-      steps {
-        build 'Python_MobileTestCases'
+        build 'UIPath_excel_Integration'
       }
     }
 
     stage('Performance_Test') {
       steps {
         build 'Performance_Tests'
-      }
-    }
-
-    stage('Generate Reports') {
-      steps {
-        build 'Python_ReportGeneration'
       }
     }
 
