@@ -15,7 +15,7 @@ pipeline {
 
     stage('Performance_Test') {
       steps {
-        build 'Performance_Tests'
+        build 'Performance_uipath_test'
       }
     }
 
