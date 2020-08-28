@@ -3,19 +3,37 @@ pipeline {
   stages {
     stage('GIT') {
       steps {
-        build 'RunDevelopmentProject'
+        build 'TX-automate_RunDevelopmentProjectBuild'
       }
     }
 
-    stage('UIPath_Tests') {
+    stage('TX_Web') {
       steps {
-        build 'UIPath_excel_Integration'
+        build 'TX-automate_WebTestCases'
       }
     }
 
-    stage('Performance_Test') {
+    stage('TX_API') {
       steps {
-        build 'Performance_uipath_test'
+        build 'TX-automate_APITestCases'
+      }
+    }
+
+    stage('TX_Mobile') {
+      steps {
+        build 'TX-automate_MobileTestCases'
+      }
+    }
+
+    stage('TX_Performance') {
+      steps {
+        build 'TX-automate_Performance'
+      }
+    }
+
+    stage('TX_SonarQube') {
+      steps {
+        build 'TX-automate_SonarQube'
       }
     }
 
