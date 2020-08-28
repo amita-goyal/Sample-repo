@@ -7,21 +7,26 @@ pipeline {
       }
     }
 
-    stage('TX_Web') {
-      steps {
-        build 'TX-automate_WebTestCases'
-      }
-    }
+    stage('TX_TestCases') {
+      parallel {
+        stage('TX_Web') {
+          steps {
+            build 'TX-automate_WebTestCases'
+          }
+        }
 
-    stage('TX_API') {
-      steps {
-        build 'TX-automate_APITestCases'
-      }
-    }
+        stage('TX_API') {
+          steps {
+            build 'TX-automate_APITestCases'
+          }
+        }
 
-    stage('TX_Mobile') {
-      steps {
-        build 'TX-automate_MobileTestCases'
+        stage('TX_Mobile') {
+          steps {
+            build 'TX-automate_MobileTestCases'
+          }
+        }
+
       }
     }
 
